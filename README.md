@@ -1,7 +1,7 @@
 # Sunbit.
 Example for using Terraform (newly learned technology).
 
-## This repository comes to answer this question
+## This repository will implement this request:
 ```
 First, make sure you have access to a MySQL server with root username & password. (Local on your machine or remote)
 Write a Terraform configuration that will use Terraform MySQL provider.

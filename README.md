@@ -1,5 +1,5 @@
 # Sunbit.
-Example for using Terraform (newly learn technology).
+Example for using Terraform (newly learned technology).
 
 ## This repository comes to answer this question
 ```

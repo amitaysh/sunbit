@@ -49,9 +49,13 @@ I've tried to document the steps within the configuration file (sunbit.tf), and 
 terraform apply -var 'db_names=["first_db","second_db","third_db"]' -var 'user_pass_map={"first_user"="pass", "second_user"="anotherpass", "third_user"="passpass", "forth_user"="morepass"}'
 ```
 In addition - here are screenshots for example of usage:
+
 ![New Empty DB](/screenshots/empty_db.JPG)
+
 ![Terraform init](/screenshots/terraform_init.JPG)
+
 ![Terraform apply](/screenshots/terraform_apply.JPG)
+
 ![Full results DB](/screenshots/results_db.JPG)
 
 ## Summary

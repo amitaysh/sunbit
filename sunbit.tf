@@ -36,10 +36,10 @@ resource "mysql_user" "users"
 resource "mysql_grant" "users" 
 {
   # count number of users
-  count = "${length(var.user_pass_map)}"
+  count = "${length(var.user_pass_map) * length(var.db_names)}"
   # grant SELECT privilege for each user on all databases
-  user = "${element(keys(var.user_pass_map), count.index)}"
-  database = "*"
+  user = "${element(keys(var.user_pass_map), count.index % length(var.user_pass_map))}"
+  database = "${var.db_names[count.index / length(var.user_pass_map)]}"
   privileges = ["SELECT"]
   # let terraform know that it must grant AFTER user creation
   depends_on = ["mysql_user.users"]

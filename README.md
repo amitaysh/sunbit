@@ -42,6 +42,7 @@ I had several problems, and their fixes:
 * Got some hard times getting terraform to work since MySql didn't had any root privileges in the container. [This](https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost) gave me a good hint. (MySql uses system root account and NOT db root account...)
 * I needed a refresh on users management, [here](https://www.shellhacks.com/mysql-show-users-privileges-passwords/)
 * The 'apply' part failed due to Terraform trying to grant user's permissions BEFORE creating them... [This](https://learn.hashicorp.com/terraform/getting-started/dependencies.html) helped a lot! ([Terraform claims](https://www.terraform.io/docs/configuration/load.html) that their process knows how to solve the dependencies, but a fact is that it failed until I've added "depends_on" section in the configuration file...)
+* Grant "SELECT" over ALL databases, instead of just the ones supplied in the current run... [This](https://i-py.com/2017/Terraform-Usergen/) gave me a huge hint
 
 ## Documentation and screenshot
 I've tried to document the steps within the configuration file (sunbit.tf), and here is an example command line for the 'apply' part of Terraform:
@@ -56,7 +57,7 @@ In addition - here are screenshots for example of usage:
 
 ![Terraform apply](/screenshots/terraform_apply.JPG)
 
-![Full results DB](/screenshots/results_db.JPG)
+![Full results DB](/screenshots/updated_grant.PNG)
 
 ## Summary
 It was a great experience and Terraform is a great tool.
